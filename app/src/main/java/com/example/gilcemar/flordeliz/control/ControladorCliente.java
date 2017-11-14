@@ -1,46 +1,28 @@
 package com.example.gilcemar.flordeliz.control;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
-import com.example.gilcemar.flordeliz.dao.Conexao;
+import com.example.gilcemar.flordeliz.dao.ClienteDAO;
+import com.example.gilcemar.flordeliz.dao.DAO;
 
 import java.io.IOException;
 
 /**
- * Created by gilcemar on 10/11/17.
+ * Created by gilcemar on 14/11/17.
  */
 
-public class ControladorCalcado extends Controlador{
-    /**
-     * Esse método verica o estado do serviço da rede. No caso de estar OK retorna verdadeiro, caso
-     * contrário retorna falso.
-     * @return boolean
-     */
+public class ControladorCliente extends Controlador {
     @Override
-    public boolean internetEstaConectada(Context context){
-        ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo infNet = connManager.getActiveNetworkInfo();
-
-        if (infNet != null && infNet.isConnected()){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    @Override
-    public String inserir(String [] parametros, Context context){
-
+    public String inserir(String[] parametros, Context context) {
         String retorno = "deu certo";
-        if (internetEstaConectada(context)){
+        if (super.internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
             param[1] = "inserirCalc";
-            Conexao conexao = new Conexao();
+            DAO clienteDAO = new ClienteDAO();
 
             try {
-                retorno = conexao.inserirCalcado(parametros);
+                retorno = clienteDAO.inserir(parametros);
                 return retorno;
 
             } catch (IOException e) {
@@ -54,22 +36,19 @@ public class ControladorCalcado extends Controlador{
             retorno = "Não deu certo a conexão";
             return retorno;
         }
-
-
     }
+
     @Override
-    public String pesquisar (String [] parametros, Context context){
-
-
+    public String alterar(String[] parametros, Context context) {
         String retorno;
-        if (internetEstaConectada(context)){
+        if (super.internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            Conexao conexao = new Conexao();
+            DAO clienteDAO = new ClienteDAO();
 
             try {
-                retorno = conexao.pesquisarCalcado(parametros);
+                retorno = clienteDAO.alterar(parametros);
                 return retorno;
 
             } catch (IOException e) {
@@ -83,22 +62,19 @@ public class ControladorCalcado extends Controlador{
             retorno= "Não deu certo a conexão";
             return retorno;
         }
-
-
     }
+
     @Override
-    public String alterar (String [] parametros, Context context){
-
-
+    public String pesquisar(String[] parametros, Context context) {
         String retorno;
-        if (internetEstaConectada(context)){
+        if (super.internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            Conexao conexao = new Conexao();
+            DAO clienteDAO = new ClienteDAO();
 
             try {
-                retorno = conexao.alterarCalcado(parametros);
+                retorno = clienteDAO.pesquisar(parametros);
                 return retorno;
 
             } catch (IOException e) {
@@ -112,23 +88,19 @@ public class ControladorCalcado extends Controlador{
             retorno= "Não deu certo a conexão";
             return retorno;
         }
-
-
     }
 
     @Override
-    public String excluir(String [] parametros, Context context){
-
-
+    public String excluir(String[] parametros, Context context) {
         String retorno;
         if (internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            Conexao conexao = new Conexao();
+            DAO clienteDAO = new ClienteDAO();
 
             try {
-                retorno = conexao.excluirCalcado(parametros);
+                retorno = clienteDAO.excluir(parametros);
                 return retorno;
 
             } catch (IOException e) {
@@ -142,7 +114,7 @@ public class ControladorCalcado extends Controlador{
             retorno= "Não deu certo a conexão";
             return retorno;
         }
-
-
     }
+
+
 }

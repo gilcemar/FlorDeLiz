@@ -2,8 +2,8 @@ package com.example.gilcemar.flordeliz.view;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +15,6 @@ import com.example.gilcemar.flordeliz.control.ControladorCalcado;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class CadastroCalcado extends AppCompatActivity implements View.OnClickListener{
     private static final String INSERIRCALCADO = "inserirCalc";
@@ -90,7 +87,7 @@ public class CadastroCalcado extends AppCompatActivity implements View.OnClickLi
         parametros[6]=getIdCalcado();
         Context contexto = getApplicationContext();
         //ControladorCalcado controlCalcado = new ControladorCalcado();
-        //controlCalcado.inserirCalcado(parametros,contexto);
+        //controlCalcado.inserir(parametros,contexto);
         Object[] param = new Object[2];
         param[0] = parametros;
         param[1] = v;
@@ -168,7 +165,7 @@ public class CadastroCalcado extends AppCompatActivity implements View.OnClickLi
                     String qualErro="Tudo ok";
                     try {
                         ControladorCalcado controladorCalcado = new ControladorCalcado();
-                        qualErro = controladorCalcado.inserirCalcado(parametros, getApplicationContext());
+                        qualErro = controladorCalcado.inserir(parametros, getApplicationContext());
                         resultado[0]= "botaoInsCalc";
                         resultado[1]= qualErro;
                         resultado[2] = "OK";
@@ -189,7 +186,7 @@ public class CadastroCalcado extends AppCompatActivity implements View.OnClickLi
                     String selecao;
                     try {
                         ControladorCalcado controladorCalcado = new ControladorCalcado();
-                        selecao= controladorCalcado.alterarCalcado(parametros, getApplicationContext());
+                        selecao= controladorCalcado.alterar(parametros, getApplicationContext());
                         resultado[0] = "botaoAlterarCal";
                         resultado[1] = selecao;
                         resultado[2] = "OK";
@@ -209,7 +206,7 @@ public class CadastroCalcado extends AppCompatActivity implements View.OnClickLi
                     String selecao;
                     try {
                         ControladorCalcado controladorCalcado = new ControladorCalcado();
-                        selecao= controladorCalcado.excluirCalcado(parametros, getApplicationContext());
+                        selecao= controladorCalcado.excluir(parametros, getApplicationContext());
                         resultado[0] = "botaoExcluirCal";
                         resultado[1] = selecao;
                         resultado[2] = "OK";
@@ -230,7 +227,7 @@ public class CadastroCalcado extends AppCompatActivity implements View.OnClickLi
                     String selecao;
                     try {
                         ControladorCalcado controladorCalcado = new ControladorCalcado();
-                        selecao= controladorCalcado.pesquisarCalcado(parametros, getApplicationContext());
+                        selecao= controladorCalcado.pesquisar(parametros, getApplicationContext());
                         resultado[0] = "botaoPesqCalc";
                         resultado[1] = selecao;
                         resultado[2] = "OK";
