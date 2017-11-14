@@ -30,12 +30,21 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
     public void setCnpjAnt(String cnpjAnt) {
         this.cnpjAnt = cnpjAnt;
     }
-
     private String cnpjAnt;
+    private String idEnd;
+    private String telAnt;
     private EditText campoCnpj;
     private EditText campoNomeLoja;
+    private EditText campoTelefone;
     private EditText campoCpf;
     private EditText campoNomeDono;
+    private EditText campoRua;
+    private EditText campoBairro;
+    private EditText campoCidade;
+    private EditText campoUf;
+    private EditText campoPais;
+    private EditText campoNumero;
+
 
 
     private Button botaoPesquisar;
@@ -49,10 +58,21 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_cliente);
         cnpjAnt ="";
+        idEnd = "";
+        telAnt = "";
         campoCnpj = findViewById(R.id.edtCnpjCliente);
         campoNomeLoja = findViewById(R.id.edtNomeLoja);
+        campoTelefone = findViewById(R.id.edtTelefone);
         campoCpf = findViewById(R.id.edtCpfDono);
         campoNomeDono = findViewById(R.id.edtNomeDono);
+
+        campoRua = findViewById(R.id.edtRua);
+        campoBairro = findViewById(R.id.edtBairro);
+        campoCidade = findViewById(R.id.edtCidade);
+        campoUf = findViewById(R.id.edtUf);
+        campoPais = findViewById(R.id.edtPais);
+        campoNumero = findViewById(R.id.edtNumero);
+
         this.botaoPesquisar = findViewById(R.id.botaoPesqCliente);
         this.botaoInserir = findViewById(R.id.botaoInsCliente);
         this.botaoAlterar = findViewById(R.id.botaoAltCliente);
@@ -74,13 +94,32 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
      * acionado na tela.
      */
     public Object[] getCampos(View v){
-        String[] parametros= new String[5];
+        String[] parametros= new String[14];
         //começar a colocar do índice para que lá na doBackground seja colocada a ação correta
         parametros[0]= cnpjAnt;
+
+        /*Dados do cliente*/
         parametros[1]= campoCnpj.getText().toString();
-        parametros[2]= (campoCpf.getText().toString());
-        parametros[3]= (campoNomeDono.getText().toString());
+        parametros[2]= campoCpf.getText().toString();
+        parametros[3]= campoNomeDono.getText().toString();
         parametros[4]= campoNomeLoja.getText().toString();
+        /*Dados do cliente*/
+
+        /*Dados do endereço*/
+        parametros[5]= campoRua.getText().toString();
+        parametros[6]= campoBairro.getText().toString();
+        parametros[7]= campoCidade.getText().toString();
+        parametros[8]= campoUf.getText().toString();
+        parametros[9]= campoPais.getText().toString();
+        parametros[10]= campoNumero.getText().toString();
+        parametros[11]= idEnd;
+        /*Dados do endereço*/
+
+        /*Dados do Telefone*/
+        parametros[12] = campoTelefone.getText().toString();
+        parametros[13]= telAnt;
+        /*Dados do Telefone*/
+
 
         Context contexto = getApplicationContext();
         //ControladorCalcado controlCalcado = new ControladorCalcado();
@@ -91,7 +130,7 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
         return param;
     }
 
-    public boolean preencherCampo (String resultado){
+    public boolean preencherCampoEnd (String resultado){
         String teste = "numa";
         JSONArray jsonArray;
         try {
@@ -101,11 +140,85 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
             JSONObject row = jsonArray.getJSONObject(0);
             //aqui tem que colocar sempre os nomes das colunas que vem no resultado do JSON, ou seja, os nomes das
             // colunas do banco de dados.
+
+            /*Dados do endereço*/
+            campoRua.setText(row.getString("rua"));
+            campoBairro.setText(row.getString("bairro"));
+            campoCidade.setText(row.getString("cidade"));
+            campoUf.setText(row.getString("uf"));
+            campoPais.setText(row.getString("pais"));
+            campoNumero.setText(row.getString("numero"));
+            idEnd = row.getString("idEnd");
+            /*Dados do endereço*/
+
+            /*Dados do telefone*/
+            /*campoNumero;*/
+
+
+            return true;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            teste = e.getMessage();
+            //teste
+            return false;
+        }
+    }
+
+    public boolean preencherCampoTel (String resultado){
+        String teste = "numa";
+        JSONArray jsonArray;
+        try {
+            jsonArray= new JSONArray(resultado);
+            //String outra = jsonArray.getString(0);
+
+            JSONObject row = jsonArray.getJSONObject(0);
+            //aqui tem que colocar sempre os nomes das colunas que vem no resultado do JSON, ou seja, os nomes das
+            // colunas do banco de dados.
+
+            /*Dados do telefone*/
+            telAnt = row.getString("numero");
+            campoTelefone.setText(row.getString("numero"));
+
+            return true;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            teste = e.getMessage();
+            //teste
+            return false;
+        }
+    }
+
+    public boolean preencherCampoCliente (String resultado){
+        String teste = "numa";
+        JSONArray jsonArray;
+        try {
+            jsonArray= new JSONArray(resultado);
+            //String outra = jsonArray.getString(0);
+
+            JSONObject row = jsonArray.getJSONObject(0);
+            //aqui tem que colocar sempre os nomes das colunas que vem no resultado do JSON, ou seja, os nomes das
+            // colunas do banco de dados.
+
+            /*Dados do cliente*/
             cnpjAnt =row.getString("cnpjLojaCliente");
             campoCnpj.setText(row.getString("cnpjLojaCliente"));
             campoCpf.setText(row.getString("cpfCliente"));
             campoNomeDono.setText(row.getString("nomeCliente"));
             campoNomeLoja.setText(row.getString("nomeLojaCliente"));
+            /*Dados do cliente*/
+
+            /*Dados do endereço*/
+            /*campoRua;
+            campoBairro;
+            campoCidade;
+            campoUf;
+            campoPais;
+            campoNumero;
+            idEnd;
+            /*Dados do endereço*/
+
+            /*Dados do telefone*/
+            /*campoNumero;*/
 
 
             return true;
@@ -159,83 +272,99 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
             String parametro = "";
             switch(acao.getId()){
                 case R.id.botaoInsCliente:{
-                    String[] resultado = new String[3];
-                    String qualErro="Tudo ok";
+                    String[] resultado = new String[5];
+                    String[] qualErro = new String[1];
                     try {
-                        Controlador controladorCliente = new ControladorCliente();
-                        qualErro = controladorCliente.inserir(parametros, getApplicationContext());
+                        Controlador controlador = new ControladorCliente();
+                        qualErro = controlador.inserir(parametros, getApplicationContext());
                         resultado[0]= "botaoIns";
-                        resultado[1]= qualErro;
-                        resultado[2] = "OK";
+                        resultado[1]= qualErro[0];
+                        resultado[2]= qualErro[1];
+                        resultado[3]= qualErro[2];
+                        resultado[4] = "OK";
                         return resultado;
                         //break;
                     }catch (NullPointerException nulo){
-                        qualErro = nulo.getMessage();
+                        //qualErro = nulo.getMessage();
                         resultado[0]= "botaoIns";
-                        resultado[1]= qualErro;
-                        resultado[2] = "Erro";
+                        resultado[1]= qualErro[0];
+                        resultado[2]= qualErro[1];
+                        resultado[3]= qualErro[2];
+                        resultado[4] = "OK";
                         return resultado;
                     }
 
 
                 }
                 case R.id.botaoAltCliente:{
-                    String[] resultado = new String[3];
-                    String selecao;
+                    String[] resultado = new String[5];
+                    String selecao[];
                     try {
-                        Controlador controladorCliente = new ControladorCliente();
-                        selecao= controladorCliente.alterar(parametros, getApplicationContext());
+                        Controlador controlador = new ControladorCliente();
+                        selecao= controlador.alterar(parametros, getApplicationContext());
                         resultado[0] = "botaoAlt";
-                        resultado[1] = selecao;
-                        resultado[2] = "OK";
+                        resultado[1] = selecao[0];
+                        resultado[2] = selecao[1];
+                        resultado[3] = selecao[2];
+                        resultado[4] = "OK";
                         return resultado;
                         //break;
                     }catch (NullPointerException nulo){
                         String mensagemExc = nulo.getMessage();
                         resultado[0] = "botaoAlt";
                         resultado[1] = mensagemExc;
-                        resultado[2] = "Erro";
+                        //resultado[2] = selecao[1];
+                        //resultado[3] = selecao[2];
+                        resultado[4] = "Erro";
                         return resultado;
                     }
                     //break;
                 }
                 case R.id.botaoExcCliente:{
-                    String[] resultado = new String[3];
-                    String selecao;
+                    String[] resultado = new String[5];
+                    String[] selecao;
                     try {
-                        Controlador controladorCliente = new ControladorCliente();
-                        selecao= controladorCliente.excluir(parametros, getApplicationContext());
+                        Controlador controlador = new ControladorCliente();
+                        selecao= controlador.excluir(parametros, getApplicationContext());
                         resultado[0] = "botaoExc";
-                        resultado[1] = selecao;
-                        resultado[2] = "OK";
+                        resultado[1] = selecao[0];
+                        resultado[2] = selecao[1];
+                        resultado[3] = selecao[2];
+                        resultado[4] = "OK";
                         return resultado;
                         //break;
                     }catch (NullPointerException nulo){
                         String mensagemExc = nulo.getMessage();
                         resultado[0] = "botaoExc";
                         resultado[1] = mensagemExc;
-                        resultado[2] = "Erro";
+                        //resultado[2] = selecao[1];
+                        //resultado[3] = selecao[2];
+                        resultado[4] = "Erro";
                         return resultado;
                     }
                     //break;
                 }
                 case R.id.botaoPesqCliente:{
                     String toast = "Tudo certo";
-                    String[] resultado = new String[3];
-                    String selecao;
+                    String[] resultado = new String[5];
+                    String[] selecao;
                     try {
-                        Controlador controladorCliente = new ControladorCliente();
-                        selecao= controladorCliente.pesquisar(parametros, getApplicationContext());
+                        Controlador controlador = new ControladorCliente();
+                        selecao= controlador.pesquisar(parametros, getApplicationContext());
                         resultado[0] = "botaoPesq";
-                        resultado[1] = selecao;
-                        resultado[2] = "OK";
+                        resultado[1] = selecao[0];
+                        resultado[2] = selecao[1];
+                        resultado[3] = selecao[2];
+                        resultado[4] = "OK";
                         return resultado;
                         //break;
                     }catch (NullPointerException nulo){
                         String mensagemExc = nulo.getMessage();
                         resultado[0] = "botaoPesq";
                         resultado[1] = mensagemExc;
-                        resultado[2] = "Erro";
+                        //resultado[2] = selecao[1];
+                        //resultado[3] = selecao[2];
+                        resultado[4] = "Erro";
                         return resultado;
                     }
                 }
@@ -251,28 +380,29 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
             //String acao = resultado[];
             switch(resultado[0]){
                 case "botaoIns":{
-                    Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), resultado[1] + '\n' + resultado[2] + '\n' + resultado[3],Toast.LENGTH_LONG).show();
                     break;
                 }
                 case "botaoAlt" :{
-                    Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), resultado[1] + '\n' + resultado[2] + '\n' + resultado[3], Toast.LENGTH_LONG).show();
                     break;
                 }
                 case "botaoExc" :{
-                    Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), resultado[1] + '\n' + resultado[2] + '\n' + resultado[3], Toast.LENGTH_LONG).show();
                     break;
                 }
                 case "botaoPesq" : {
-                    boolean preenchimentoOk = preencherCampo(resultado[1]);
-                    if(resultado[2]=="OK"){
+                    boolean preenchimentoOk = preencherCampoCliente(resultado[1]);
+                    boolean preencherEnd = preencherCampoEnd(resultado[2]);
+                    boolean preencherTel = preencherCampoTel(resultado[3]);
+                    if(resultado[4]=="OK"){
                         if(preenchimentoOk){
-                            Toast.makeText(getApplicationContext(),"Calçado selecionado com sucesso.", Toast.LENGTH_LONG)
-                                    .show();
+                            Toast.makeText(getApplicationContext(),"Seleção realizada.", Toast.LENGTH_LONG).show();
                         }else{
-                            Toast.makeText(getApplicationContext(),resultado[1], Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), resultado[1] + '\n' + resultado[2] + '\n' + resultado[3], Toast.LENGTH_LONG).show();
                         }
                     }else {
-                        Toast.makeText(getApplicationContext(),resultado[1], Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), resultado[1] + '\n' + resultado[2] + '\n' + resultado[3], Toast.LENGTH_LONG).show();
                     }
                 }
                 default:{

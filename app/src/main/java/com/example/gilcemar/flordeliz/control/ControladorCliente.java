@@ -13,105 +13,105 @@ import java.io.IOException;
 
 public class ControladorCliente extends Controlador {
     @Override
-    public String inserir(String[] parametros, Context context) {
-        String retorno = "deu certo";
+    public String[] inserir(String[] parametros, Context context) {
+        String[] retorno = new String[1];
         if (super.internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
             param[1] = "inserirCalc";
-            DAO clienteDAO = new ClienteDAO();
+            DAO dao = new ClienteDAO();
 
             try {
-                retorno = clienteDAO.inserir(parametros);
+                retorno = dao.inserir(parametros, context);
                 return retorno;
 
             } catch (IOException e) {
                 e.printStackTrace();
-                retorno = e.getMessage();
+                retorno[0] = e.getMessage();
                 return retorno;
             }
 
             //return true;
         }else{
-            retorno = "Não deu certo a conexão";
+            retorno[0] = "Não deu certo a conexão";
             return retorno;
         }
     }
 
     @Override
-    public String alterar(String[] parametros, Context context) {
-        String retorno;
+    public String[] alterar(String[] parametros, Context context) {
+        String[] retorno = new String[1];
         if (super.internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            DAO clienteDAO = new ClienteDAO();
+            DAO dao = new ClienteDAO();
 
             try {
-                retorno = clienteDAO.alterar(parametros);
+                retorno = dao.alterar(parametros, context);
                 return retorno;
 
             } catch (IOException e) {
                 e.printStackTrace();
-                retorno = e.getMessage();
+                retorno[0] = e.getMessage();
                 return retorno;
             }
 
             //return true;
         }else{
-            retorno= "Não deu certo a conexão";
+            retorno[0]= "Não deu certo a conexão";
             return retorno;
         }
     }
 
     @Override
-    public String pesquisar(String[] parametros, Context context) {
-        String retorno;
+    public String[] pesquisar(String[] parametros, Context context) {
+        String[] retorno = new String[1];
         if (super.internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            DAO clienteDAO = new ClienteDAO();
+            DAO dao = new ClienteDAO();
 
             try {
-                retorno = clienteDAO.pesquisar(parametros);
+                retorno = dao.pesquisar(parametros, context);
                 return retorno;
 
             } catch (IOException e) {
                 e.printStackTrace();
-                retorno = e.getMessage();
+                retorno[0] = e.getMessage();
                 return retorno;
             }
 
             //return true;
         }else{
-            retorno= "Não deu certo a conexão";
+            retorno[0] = "Não deu certo a conexão";
             return retorno;
         }
     }
 
     @Override
-    public String excluir(String[] parametros, Context context) {
-        String retorno;
+    public String[] excluir(String[] parametros, Context context) {
+        String[] retorno = new String[1];
         if (internetEstaConectada(context)){
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            DAO clienteDAO = new ClienteDAO();
+            DAO dao = new ClienteDAO();
 
             try {
-                retorno = clienteDAO.excluir(parametros);
+                retorno = dao.excluir(parametros, context);
                 return retorno;
 
             } catch (IOException e) {
                 e.printStackTrace();
-                retorno = e.getMessage();
+                retorno[0] = e.getMessage();
                 return retorno;
             }
 
             //return true;
         }else{
-            retorno= "Não deu certo a conexão";
+            retorno[0] = "Não deu certo a conexão";
             return retorno;
         }
     }

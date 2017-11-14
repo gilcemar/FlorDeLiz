@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">FlorDeLiz</string>
+    <string name="app_name">Flor de Liz</string>
+    <string name="lojaExcLojaSuc">Loja excluída com sucesso.</string>
+    <string name="lojaInsLojaSuc">Loja cadastrada com sucesso.</string>
+    <string name="lojaAltLojaSuc">Loja alterada com sucesso.</string>
+
+    <string name="ExcSuc">excluída com sucesso.</string>
+    <string name="InsSuc">cadastrada com sucesso.</string>
+    <string name="AltSuc">alterada com sucesso.</string>
+
+    <string name="ExcSucEnd">Endereço excluído com sucesso.</string>
+    <string name="InsSucEnd">Endereço inserido com sucesso.</string>
+    <string name="AltSucEnd">Endereço da loja alterado com sucesso.</string>
+
+    <string name="ExcSucTel">Telefone excluído com sucesso.</string>
+    <string name="InsSucTel">Telefone inserido com sucesso.</string>
+    <string name="AltSucTel">Telefone da loja alterado com sucesso.</string>
+
+
+    <string name="ExcFail">Erro na exclusão.</string>
+    <string name="InsFail">Erro no cadastro.</string>
+    <string name="PesqFail">Nenhum dado obtido na pesquisa.</string>
+    <string name="AltFail">Tentativa de alteração não obteve sucesso.</string>
+
+
+    <string name="escolhaInex">Nenhuma opção válida foi escolhida.</string>
+
 </resources>

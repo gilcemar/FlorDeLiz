@@ -9,10 +9,10 @@ import android.net.NetworkInfo;
  */
 
 public abstract class Controlador {
-    public abstract String inserir(String [] parametros, Context context);
-    public abstract String alterar(String [] parametros, Context context);
-    public abstract String pesquisar(String [] parametros, Context context);
-    public abstract String excluir(String [] parametros, Context context);
+    public abstract String[] inserir(String [] parametros, Context context);
+    public abstract String[] alterar(String [] parametros, Context context);
+    public abstract String[] pesquisar(String [] parametros, Context context);
+    public abstract String[] excluir(String [] parametros, Context context);
     public boolean internetEstaConectada(Context context){
         ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo infNet = connManager.getActiveNetworkInfo();

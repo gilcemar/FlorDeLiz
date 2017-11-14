@@ -12,13 +12,13 @@ import java.io.IOException;
  * Created by gilcemar on 10/11/17.
  */
 
-public class ControladorCalcado extends Controlador{
+public class ControladorCalcado {
     /**
      * Esse método verica o estado do serviço da rede. No caso de estar OK retorna verdadeiro, caso
      * contrário retorna falso.
      * @return boolean
      */
-    @Override
+
     public boolean internetEstaConectada(Context context){
         ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo infNet = connManager.getActiveNetworkInfo();
@@ -29,7 +29,7 @@ public class ControladorCalcado extends Controlador{
             return false;
         }
     }
-    @Override
+
     public String inserir(String [] parametros, Context context){
 
         String retorno = "deu certo";
@@ -57,7 +57,7 @@ public class ControladorCalcado extends Controlador{
 
 
     }
-    @Override
+
     public String pesquisar (String [] parametros, Context context){
 
 
@@ -86,7 +86,7 @@ public class ControladorCalcado extends Controlador{
 
 
     }
-    @Override
+
     public String alterar (String [] parametros, Context context){
 
 
@@ -116,7 +116,7 @@ public class ControladorCalcado extends Controlador{
 
     }
 
-    @Override
+
     public String excluir(String [] parametros, Context context){
 
 
