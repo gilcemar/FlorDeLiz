@@ -12,6 +12,8 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
     private Button botaoCadCalc;
     private Button botaoCadCliente;
+    private Button botaoCadLote;
+    private Button botaoCadPedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +22,13 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
         botaoCadCalc = findViewById(R.id.cadCalc);
         botaoCadCliente = findViewById(R.id.cadCliente);
+        botaoCadLote = findViewById(R.id.cadLote);
+        botaoCadPedido = findViewById(R.id.cadPedido);
 
         botaoCadCalc.setOnClickListener(this);
         botaoCadCliente.setOnClickListener(this);
+        botaoCadLote.setOnClickListener(this);
+        botaoCadPedido.setOnClickListener(this);
 
     }
 
@@ -39,6 +45,16 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
             }
             case R.id.cadCliente:{
                 Intent it = new Intent(Principal.this, CadastroCliente.class);
+                startActivity(it);
+                break;
+            }
+            case R.id.cadLote:{
+                Intent it = new Intent(Principal.this, CadastroLote.class);
+                startActivity(it);
+                break;
+            }
+            case R.id.cadPedido:{
+                Intent it = new Intent(Principal.this, CadastroPedido.class);
                 startActivity(it);
                 break;
             }

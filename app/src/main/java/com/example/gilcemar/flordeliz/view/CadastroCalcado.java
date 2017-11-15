@@ -257,11 +257,11 @@ public class CadastroCalcado extends AppCompatActivity implements View.OnClickLi
                     break;
                 }
                 case "botaoAlterarCal" :{
-
+                    Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
                     break;
                 }
                 case "botaoExcluirCal" :{
-
+                    Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
                     break;
                 }
                 case "botaoPesqCalc" : {

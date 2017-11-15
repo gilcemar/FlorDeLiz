@@ -31,6 +31,11 @@ public abstract class DAO {
     protected static final String PESQUISARCLIENTE = "botaoPesqCli";
     protected static final String ALTERARCLIENTE = "botaoAltCli";
 
+    protected static final String EXCLUIRLOTE = "botaoExcLote";
+    protected static final String INSERIRLOTE = "botaoInsLote";
+    protected static final String PESQUISARLOTE = "botaoPesqLote";
+    protected static final String ALTERARLOTE = "botaoAltLote";
+
     public abstract String[] inserir(String[] parametros, Context context) throws IOException;
     public abstract String[] alterar(String[] parametros, Context context) throws IOException;
     public abstract String[] pesquisar(String[] parametros, Context context) throws IOException;

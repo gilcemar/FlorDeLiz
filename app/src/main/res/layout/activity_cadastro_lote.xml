@@ -4,133 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gilcemar.flordeliz.view.CadastroCalcado">
+    tools:context="com.example.gilcemar.flordeliz.view.CadastroLote">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/Lote"
             android:layout_width="match_parent"
-            android:layout_height="1000dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <EditText
-                android:id="@+id/edtNomeCal"
+                android:id="@+id/edtNumeroLote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Nome do calçado"
+                android:hint="Número do lote"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtMenorTamCal"
+                android:id="@+id/edtCodCalcado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Qual o menor tamanho do calçado?"
+                android:hint="Código do calçado"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtMaiorTamCal"
+                android:id="@+id/edtDataProdLote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Qual o maior tamanho do calçado?"
+                android:hint="data de produção do lote"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtCorCal"
+                android:id="@+id/edtQuatProd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Qual a cor do calçado?"
+                android:hint="Quantidade produzida"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtColecaoCal"
+                android:id="@+id/edtQuantDispon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Qual a coleção do calçado?"
+                android:hint="Quantidade disponível"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtPrecoCustCal"
+                android:id="@+id/edtTamCalcado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Qual o preço de custo do  calçado?"
+                android:hint="Tamanho do calcado"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edtPrecoRevenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Preço de revenda"
                 android:inputType="textPersonName" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/botaoPesqCalc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Pesquisar" />
-
-                <Button
-                    android:id="@+id/botaoInsCalc"
+                    android:id="@+id/botaoInsLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Cadastrar" />
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-
                 <Button
-                    android:id="@+id/botaoAlterarCal"
+                    android:id="@+id/botaoAltLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Alterar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/botaoExcluirCal"
+                    android:id="@+id/botaoExcLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Excluir" />
 
+                <Button
+                    android:id="@+id/botaoPesqLote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pesquisar" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/botaoVoltar"
+                    android:id="@+id/botaoVoltarLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Voltar"
-                    tools:layout_editor_absoluteX="295dp" />
+                    android:text="Voltar" />
             </LinearLayout>
-
         </LinearLayout>
-    </ScrollView>
 
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
