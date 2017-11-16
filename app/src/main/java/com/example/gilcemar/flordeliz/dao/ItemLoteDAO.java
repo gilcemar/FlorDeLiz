@@ -98,7 +98,7 @@ public class ItemLoteDAO extends DAO {
         FormBody.Builder formBody = new FormBody.Builder();
         formBody.add(PESQUISARITEMLOTE,PESQUISARITEMLOTE);//esse name vem lá do script PHP.
         formBody.add("codCalProd",parametros[0]);//NESSE MÉTODO É NECESSÁRIO FICAR ESSA ORDEM DIFERENTE
-        formBody.add("idLote",parametros[3]);//AQUI
+        formBody.add("idLote",parametros[1]);//AQUI
         formBody.add("idLoteAnt",parametros[2]);//E AQUI
         formBody.add("tamCalc",parametros[3]);
         formBody.add("quantProd",parametros[4]);

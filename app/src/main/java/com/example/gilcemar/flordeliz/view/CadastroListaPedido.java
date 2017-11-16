@@ -47,6 +47,10 @@ public class CadastroListaPedido extends AppCompatActivity implements AdapterVie
         adapter = new AdaptadorItemPedido(listaDePedidos,this);
         listViewItensPedido.setAdapter(adapter);
         listViewItensPedido.setOnItemClickListener(this);
+        if(adapter.getCount()==0){
+            Intent intent = new Intent(CadastroListaPedido.this, CadastroItemPedido.class);
+            startActivity(intent);
+        }
     }
 
     @Override

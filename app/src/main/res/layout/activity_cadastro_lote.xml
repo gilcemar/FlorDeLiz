@@ -79,6 +79,27 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/botaoPesqLote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pesquisar" />
+
+                <Button
+                    android:id="@+id/botaoPesqItemLote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Listar itens do lote" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
                     android:id="@+id/botaoInsLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -95,8 +116,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/botaoExcLote"
@@ -104,19 +124,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Excluir" />
-
-                <Button
-                    android:id="@+id/botaoPesqLote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Pesquisar" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <Button
                     android:id="@+id/botaoVoltarLote"

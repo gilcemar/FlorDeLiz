@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.gilcemar.flordeliz.R;
 import com.example.gilcemar.flordeliz.control.Controlador;
+import com.example.gilcemar.flordeliz.control.ControladorItemLote;
 import com.example.gilcemar.flordeliz.control.ControladorLote;
 
 import org.json.JSONArray;
@@ -31,6 +32,7 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
     private EditText campoPrecoRev;
 
     private Button botaoPesquisar;
+    private Button botaoPesquisaItemLote;
     private Button botaoInserir;
     private Button botaoAlterar;
     private Button botaoExcluir;
@@ -53,11 +55,13 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
         campoPrecoRev = findViewById(R.id.edtPrecoRevenda);
 
         this.botaoPesquisar = findViewById(R.id.botaoPesqLote);
+        this.botaoPesquisaItemLote = findViewById(R.id.botaoPesqItemLote);
         this.botaoInserir = findViewById(R.id.botaoInsLote);
         this.botaoAlterar = findViewById(R.id.botaoAltLote);
         this.botaoExcluir = findViewById(R.id.botaoExcLote);
         this.botaoVoltar = findViewById(R.id.botaoVoltarLote);
         this.botaoPesquisar.setOnClickListener(this);
+        this.botaoPesquisaItemLote.setOnClickListener(this);
         this.botaoInserir.setOnClickListener(this);
         this.botaoAlterar.setOnClickListener(this);
         this.botaoExcluir.setOnClickListener(this);
@@ -91,6 +95,26 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
         parametros[8]= campoQuantDispon.getText().toString();
         parametros[9]= campoPrecoRev.getText().toString();
         /*Dados do item do lote*/
+
+        Object[] param = new Object[2];
+        param[0] = parametros;
+        param[1] = v;
+        return param;
+    }
+
+    public Object[] getCamposItemLote(View v){
+        String[] parametros= new String[14];
+        //começar a colocar do índice para que lá na doBackground seja colocada a ação correta
+
+        /*Dados do item lote*/
+        parametros[0]= campoCodProduto.getText().toString();
+        parametros[1]= campoNumeroLote.getText().toString();
+        parametros[2]= "";
+        parametros[3]= "";
+        parametros[4]= "";
+        parametros[5]= "";
+        parametros[6]= "";
+        /*Dados do item lote*/
 
         Object[] param = new Object[2];
         param[0] = parametros;
@@ -159,6 +183,10 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
             case R.id.botaoVoltarLote:{
                 //Intent it = new Intent(Principal.this, CadastroCliente.class);
                 finish();
+                break;
+            }
+            case R.id.botaoPesqItemLote :{
+                new CadastroLote.TarefaAssincrona().execute(getCamposItemLote(v));
                 break;
             }
             case R.id.botaoPesqLote:{
@@ -278,6 +306,29 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
                         return resultado;
                     }
                 }
+                case R.id.botaoPesqItemLote:{
+                    String toast = "Tudo certo";
+                    String[] resultado = new String[5];
+                    String[] selecao;
+                    try {
+                        Controlador controlador = new ControladorItemLote();
+                        selecao= controlador.pesquisar(parametros, getApplicationContext());
+                        resultado[0] = "botaoPesqItemLote";
+                        resultado[1] = selecao[0];
+                        resultado[2] = selecao[1];
+                        resultado[4] = "OK";
+                        return resultado;
+                        //break;
+                    }catch (NullPointerException nulo){
+                        String mensagemExc = nulo.getMessage();
+                        resultado[0] = "botaoPesqItemLote";
+                        resultado[1] = mensagemExc;
+                        //resultado[2] = selecao[1];
+                        //resultado[3] = selecao[2];
+                        resultado[4] = "Erro";
+                        return resultado;
+                    }
+                }
                 default:{
                     return null;
                 }
@@ -301,6 +352,16 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
                     break;
                 }
+                case "botaoPesqItemLote" :{
+                    if (resultado.length>3){
+                        Intent it = new Intent(CadastroLote.this, CadastroListaItemLote.class);
+                        it.putExtra("numeroLote", resultado[1]);
+                        startActivity(it);
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Nenhum item existe para esse lote.", Toast.LENGTH_LONG).show();
+                    }
+                    break;
+                }
                 case "botaoPesq" : {
                     boolean preenchimentoOk = preencherCampoLote(resultado[1]);
                     //boolean preencherEnd = preencherCampoItemLote(resultado[2]);
@@ -308,17 +369,13 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
                     if(resultado[4]=="OK"){
                         if(preenchimentoOk){
                             Toast.makeText(getApplicationContext(),"Seleção realizada.", Toast.LENGTH_LONG).show();
-                            if (resultado.length>3){
-                                Intent it = new Intent(CadastroLote.this, CadastroListaItemLote.class);
-                                it.putExtra("numeroLote", resultado[2]);
-                                startActivity(it);
-                            }
                         }else{
                             Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
                         }
                     }else {
                         Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
                     }
+                    break;
                 }
                 default:{
                     break;

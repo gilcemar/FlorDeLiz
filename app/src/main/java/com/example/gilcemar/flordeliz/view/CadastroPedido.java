@@ -281,6 +281,7 @@ public class CadastroPedido extends AppCompatActivity implements View.OnClickLis
                     }else {
                         Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
                     }
+                    break;
                 }
                 case "botaoList" :{
                     Intent it = new Intent(CadastroPedido.this, CadastroListaPedido.class);
