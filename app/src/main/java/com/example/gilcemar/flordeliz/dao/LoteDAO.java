@@ -120,6 +120,13 @@ public class LoteDAO extends DAO {
         String[] resposta = new String[3];
         resposta[0] = response.body().string();
 
+        ItemLoteDAO daoItem = new ItemLoteDAO();
+
+        String[] respostaItemLote = daoItem.pesquisar(parametros, context);
+        if (respostaItemLote[0]!=null){
+            resposta[1] = respostaItemLote[0];
+        }
+
         return resposta;
     }
 

@@ -22,7 +22,10 @@
         <activity android:name=".view.CadastroCalcado" />
         <activity android:name=".view.CadastroCliente" />
         <activity android:name=".view.CadastroPedido" />
-        <activity android:name=".view.CadastroLote"></activity>
+        <activity android:name=".view.CadastroLote" />
+        <activity android:name="view.ListaItemLote" />
+        <activity android:name=".view.CadastroListaItemLote" />
+        <activity android:name=".view.CadastroItemLote"></activity>
     </application>
 
 </manifest>

@@ -36,6 +36,21 @@ public abstract class DAO {
     protected static final String PESQUISARLOTE = "botaoPesqLote";
     protected static final String ALTERARLOTE = "botaoAltLote";
 
+    protected static final String EXCLUIRITEMLOTE = "botaoExcItemLote";
+    protected static final String INSERIRITEMLOTE = "botaoInsItemLote";
+    protected static final String PESQUISARITEMLOTE = "botaoPesqItemLote";
+    protected static final String ALTERARITEMLOTE = "botaoAltItemLote";
+
+    protected static final String EXCLUIRPEDIDO = "botaoExcItemLote";
+    protected static final String INSERIRPEDIDO = "botaoInsItemLote";
+    protected static final String PESQUISARPEDIDO = "botaoPesqItemLote";
+    protected static final String ALTERARPEDIDO = "botaoAltItemLote";
+
+    protected static final String EXCLUIRITEMPEDIDO = "botaoExcItemLote";
+    protected static final String INSERIRITEMPEDIDO = "botaoInsItemLote";
+    protected static final String PESQUISARITEMPEDIDO = "botaoPesqItemLote";
+    protected static final String ALTERARITEMPEDIDO = "botaoAltItemLote";
+
     public abstract String[] inserir(String[] parametros, Context context) throws IOException;
     public abstract String[] alterar(String[] parametros, Context context) throws IOException;
     public abstract String[] pesquisar(String[] parametros, Context context) throws IOException;

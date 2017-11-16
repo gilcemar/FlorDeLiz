@@ -1,5 +1,6 @@
 package com.example.gilcemar.flordeliz.view;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -263,7 +264,7 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
                         selecao= controlador.pesquisar(parametros, getApplicationContext());
                         resultado[0] = "botaoPesq";
                         resultado[1] = selecao[0];
-
+                        resultado[2] = selecao[1];
                         resultado[4] = "OK";
                         return resultado;
                         //break;
@@ -307,6 +308,11 @@ public class CadastroLote extends AppCompatActivity implements View.OnClickListe
                     if(resultado[4]=="OK"){
                         if(preenchimentoOk){
                             Toast.makeText(getApplicationContext(),"Seleção realizada.", Toast.LENGTH_LONG).show();
+                            if (resultado.length>3){
+                                Intent it = new Intent(CadastroLote.this, CadastroListaItemLote.class);
+                                it.putExtra("numeroLote", resultado[2]);
+                                startActivity(it);
+                            }
                         }else{
                             Toast.makeText(getApplicationContext(), resultado[1], Toast.LENGTH_LONG).show();
                         }

@@ -30,7 +30,7 @@ public class PedidoDAO extends DAO {
         //RequestBody body = RequestBody.create(mediaType,post);
         RequestBody body = null;
         FormBody.Builder formBody = new FormBody.Builder();
-        formBody.add(INSERIRCLIENTE,INSERIRCLIENTE);//esse name vem lá do script PHP.
+        formBody.add(INSERIRPEDIDO,INSERIRPEDIDO);//esse name vem lá do script PHP.
         formBody.add("descPedido",parametros[0]);
         formBody.add("cnpjLoja",parametros[1]);
         formBody.add("cnpjLojaAnt",parametros[2]);
@@ -65,7 +65,7 @@ public class PedidoDAO extends DAO {
         //RequestBody body = RequestBody.create(mediaType,post);
         RequestBody body = null;
         FormBody.Builder formBody = new FormBody.Builder();
-        formBody.add(ALTERARCLIENTE,ALTERARCLIENTE);//esse name vem lá do script PHP.
+        formBody.add(ALTERARPEDIDO,ALTERARPEDIDO);//esse name vem lá do script PHP.
         formBody.add("descPedido",parametros[0]);
         formBody.add("cnpjLoja",parametros[1]);
         formBody.add("cnpjLojaAnt",parametros[2]);
@@ -99,7 +99,7 @@ public class PedidoDAO extends DAO {
         //RequestBody body = RequestBody.create(mediaType,post);
         RequestBody body = null;
         FormBody.Builder formBody = new FormBody.Builder();
-        formBody.add(PESQUISARCLIENTE,PESQUISARCLIENTE);//esse name vem lá do script PHP.
+        formBody.add(PESQUISARPEDIDO,PESQUISARPEDIDO);//esse name vem lá do script PHP.
         formBody.add("descPedido",parametros[0]);
         formBody.add("cnpjLoja",parametros[1]);
         formBody.add("cnpjLojaAnt",parametros[2]);
@@ -133,7 +133,7 @@ public class PedidoDAO extends DAO {
         //RequestBody body = RequestBody.create(mediaType,post);
         RequestBody body = null;
         FormBody.Builder formBody = new FormBody.Builder();
-        formBody.add(EXCLUIRCLIENTE,EXCLUIRCLIENTE);//esse name vem lá do script PHP.
+        formBody.add(EXCLUIRPEDIDO,EXCLUIRPEDIDO);//esse name vem lá do script PHP.
         formBody.add("descPedido",parametros[0]);
         formBody.add("cnpjLoja",parametros[1]);
         formBody.add("cnpjLojaAnt",parametros[2]);

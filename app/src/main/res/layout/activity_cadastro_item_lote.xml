@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gilcemar.flordeliz.view.CadastroLote">
+    tools:context="com.example.gilcemar.flordeliz.view.CadastroItemLote">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/Lote"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/edtNumeroLote"
+                android:id="@+id/edtNumeroLote3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -26,7 +24,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtCodCalcado"
+                android:id="@+id/edtCodCalcadoProd3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -34,15 +32,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtDataProdLote"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="data de produção do lote"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edtQuatProd"
+                android:id="@+id/edtQuantProd3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -50,7 +40,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtQuantDispon"
+                android:id="@+id/edtQuantDispon3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -58,7 +48,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtTamCalcado"
+                android:id="@+id/edtTamCalcado3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -66,7 +56,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edtPrecoRevenda"
+                android:id="@+id/edtPrecoRevenda3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -79,14 +69,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/botaoInsLote"
+                    android:id="@+id/botaoInsItemLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Cadastrar" />
 
                 <Button
-                    android:id="@+id/botaoAltLote"
+                    android:id="@+id/botaoAltItemLote3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -99,36 +89,21 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/botaoExcLote"
+                    android:id="@+id/botaoExcItemLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Excluir" />
 
                 <Button
-                    android:id="@+id/botaoPesqLote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Pesquisar" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/botaoVoltarLote"
+                    android:id="@+id/botaoVoltarItemLote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Voltar" />
+
             </LinearLayout>
+
         </LinearLayout>
-
-    </LinearLayout>
-
-
-
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
