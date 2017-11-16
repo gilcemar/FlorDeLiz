@@ -41,15 +41,15 @@ public abstract class DAO {
     protected static final String PESQUISARITEMLOTE = "botaoPesqItemLote";
     protected static final String ALTERARITEMLOTE = "botaoAltItemLote";
 
-    protected static final String EXCLUIRPEDIDO = "botaoExcItemLote";
-    protected static final String INSERIRPEDIDO = "botaoInsItemLote";
-    protected static final String PESQUISARPEDIDO = "botaoPesqItemLote";
-    protected static final String ALTERARPEDIDO = "botaoAltItemLote";
+    protected static final String EXCLUIRPEDIDO = "botaoExcPed";
+    protected static final String INSERIRPEDIDO = "botaoInsPed";
+    protected static final String PESQUISARPEDIDO = "botaoPesqPed";
+    protected static final String ALTERARPEDIDO = "botaoAltPed";
 
-    protected static final String EXCLUIRITEMPEDIDO = "botaoExcItemLote";
-    protected static final String INSERIRITEMPEDIDO = "botaoInsItemLote";
-    protected static final String PESQUISARITEMPEDIDO = "botaoPesqItemLote";
-    protected static final String ALTERARITEMPEDIDO = "botaoAltItemLote";
+    protected static final String EXCLUIRITEMPEDIDO = "botaoExcItemPedido";
+    protected static final String INSERIRITEMPEDIDO = "botaoInsItemPedido";
+    protected static final String PESQUISARITEMPEDIDO = "botaoPesqItemPedido";
+    protected static final String ALTERARITEMPEDIDO = "botaoAltItemPedido";
 
     public abstract String[] inserir(String[] parametros, Context context) throws IOException;
     public abstract String[] alterar(String[] parametros, Context context) throws IOException;

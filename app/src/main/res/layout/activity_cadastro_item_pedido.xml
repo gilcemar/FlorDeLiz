@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gilcemar.flordeliz.view.CadastroPedido">
+    tools:context="com.example.gilcemar.flordeliz.view.CadastroItemPedido">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,89 +13,62 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_margin="5dp"
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/editTextNumPedido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="Número do pedido"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextCnpjPedido"
+                android:id="@+id/editTextCodCalcadoProd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:ems="10"
-                android:hint="CNPJ do comprador"
+                android:hint="Código de produção do calçado"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextDescPedido"
+                android:id="@+id/editTextQuantItem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:ems="10"
-                android:hint="Desconto concedido"
+                android:hint="Quantidade de itens comprada"
                 android:inputType="textPersonName" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/botaoPesquisarPedido"
+                    android:id="@+id/botaoInsItemPedido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="Pesquisar" />
-
-                <Button
-                    android:id="@+id/botaoListarItensPedido"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="Listar Pedidos" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/botaoInsPedido"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="Inserir" />
 
                 <Button
-                    android:id="@+id/botaoAltPedido"
+                    android:id="@+id/botaoAltItemPedido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="Alterar" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/botaoExcPedido"
+                    android:id="@+id/botaoExcItemPedido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="Excluir" />
 
@@ -103,7 +76,6 @@
                     android:id="@+id/botaoVoltar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:text="Voltar" />
             </LinearLayout>

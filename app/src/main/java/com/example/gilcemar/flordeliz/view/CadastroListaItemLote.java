@@ -5,11 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.example.gilcemar.flordeliz.R;
-import com.example.gilcemar.flordeliz.control.Controlador;
-import com.example.gilcemar.flordeliz.control.ControladorItemLote;
 import com.example.gilcemar.flordeliz.model.ItemLote;
 
 import org.json.JSONArray;
@@ -41,25 +40,12 @@ public class CadastroListaItemLote extends AppCompatActivity implements AdapterV
         }
         //ArrayAdapter<ItemLote> adapter = new ArrayAdapter<ItemLote>(this, android.R.layout.simple_list_item_1, listaItens);
         //ArrayAdapter<ItemLote> adapter = new ArrayAdapter<ItemLote>(this,android.R.layout.simple_list_item_1, cursos);
-        Adaptador adapter = new Adaptador(listaItens,this);
+        BaseAdapter adapter = new AdaptadorItemLote(listaItens,this);
         lista.setAdapter(adapter);
         lista.setOnItemClickListener(this);
     }
 
-    public List<ItemLote> pesquisarItemLote (String numeroLote){
-        Controlador controlador = new ControladorItemLote();
-        String[] numeroAr = new String[7];
-        numeroAr[0] = "";
-        numeroAr[1] = numeroLote;
-        numeroAr[2] = "";
-        numeroAr[3] = "";
-        numeroAr[4] = "";
-        numeroAr[5] = "";
-        numeroAr[6] = "";
 
-        boolean resultado = preencherItemLote(numeroLote);
-        return  new ArrayList<ItemLote>();
-    }
 
     public boolean preencherItemLote(String resultado){
 
@@ -80,17 +66,6 @@ public class CadastroListaItemLote extends AppCompatActivity implements AdapterV
                     listaItens.add(item);
                 }
             }
-            //aqui tem que colocar sempre os nomes das colunas que vem no resultado do JSON, ou seja, os nomes das
-            // colunas do banco de dados.
-
-            /*Dados do lote
-            campoCodProduto.setText(row.getString("codProd"));
-            codProdutoAnt =row.getString("codProd");
-            campoDataProducao.setText(row.getString("dataProd"));
-            campoNumeroLote.setText(row.getString("idLote"));
-            numeroLoteAnt = row.getString("idLote");
-            Dados do lote*/
-
             return true;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -103,16 +78,9 @@ public class CadastroListaItemLote extends AppCompatActivity implements AdapterV
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         ItemLote itemLote = (ItemLote)parent.getAdapter().getItem(position);
-        int ide = view.getId();
-        String cod= itemLote.getCodCalPro();
-        String lote = itemLote.getIdLote();
+
         Intent intent = new Intent(CadastroListaItemLote.this, CadastroItemLote.class);
         intent.putExtra("ITEMLOTE", itemLote);
         startActivity(intent);
-
-
-        int e = ide;
-
-
     }
 }

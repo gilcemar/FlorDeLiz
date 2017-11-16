@@ -20,7 +20,7 @@ import okhttp3.Response;
 public class PedidoDAO extends DAO {
     @Override
     public String[] inserir(String[] parametros, Context context) throws IOException{
-        String url = "http://192.168.1.7/teste/view/cadastroCliente.php?XDEBUG_SESSION_START=netbeans-xdebug";
+        String url = "http://192.168.1.7/teste/view/cadastroPedido.php?XDEBUG_SESSION_START=netbeans-xdebug";
 
         OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();
@@ -46,16 +46,12 @@ public class PedidoDAO extends DAO {
         resposta[0]= response.body().string();
         String str = context.getString(R.string.lojaInsLojaSuc);
 
-        DAO dao = new ItemPedidoDAO();
-        String[] respEnd = dao.inserir(parametros, context);
-        resposta[1] = respEnd[0];
-
         return resposta;
     }
 
     @Override
     public String[] alterar(String[] parametros, Context context) throws IOException{
-        String url = "http://192.168.1.7/teste/view/cadastroCliente.php?XDEBUG_SESSION_START=netbeans-xdebug";
+        String url = "http://192.168.1.7/teste/view/cadastroPedido.php?XDEBUG_SESSION_START=netbeans-xdebug";
 
         OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();
@@ -80,16 +76,12 @@ public class PedidoDAO extends DAO {
         String[] resposta = new String[3];
         resposta[0] = response.body().string();
 
-        DAO dao = new ItemPedidoDAO();
-        String[] respEnd = dao.alterar(parametros, context);
-        resposta[1] = respEnd[0];
-
         return resposta;
     }
 
     @Override
     public String[] pesquisar(String[] parametros, Context context) throws IOException{
-        String url = "http://192.168.1.7/teste/view/cadastroCliente.php?XDEBUG_SESSION_START=netbeans-xdebug";
+        String url = "http://192.168.1.7/teste/view/cadastroPedido.php?XDEBUG_SESSION_START=netbeans-xdebug";
 
         OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();
@@ -114,16 +106,12 @@ public class PedidoDAO extends DAO {
         String[] resposta = new String[3];
         resposta[0] = response.body().string();
 
-        DAO dao = new ItemPedidoDAO();
-        String[] respEnd = dao.pesquisar(parametros, context);
-        resposta[1] = respEnd[0];
-
         return resposta;
     }
 
     @Override
     public String[] excluir(String[] parametros, Context context) throws IOException {
-        String url = "http://192.168.1.7/teste/view/cadastroCliente.php?XDEBUG_SESSION_START=netbeans-xdebug";
+        String url = "http://192.168.1.7/teste/view/cadastroPedido.php?XDEBUG_SESSION_START=netbeans-xdebug";
 
         OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();

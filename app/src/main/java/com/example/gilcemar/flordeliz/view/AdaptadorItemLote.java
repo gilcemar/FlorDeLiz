@@ -16,12 +16,12 @@ import java.util.List;
  * Created by gilcemar on 15/11/17.
  */
 
-public class Adaptador extends BaseAdapter{
+public class AdaptadorItemLote extends BaseAdapter{
 
     private List<ItemLote> lista;
     private Activity activity;
 
-    public Adaptador(List<ItemLote> lista, Activity activity) {
+    public AdaptadorItemLote(List<ItemLote> lista, Activity activity) {
         this.lista = lista;
         this.activity = activity;
     }

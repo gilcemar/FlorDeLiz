@@ -4,16 +4,14 @@ import android.content.Context;
 
 import com.example.gilcemar.flordeliz.dao.DAO;
 import com.example.gilcemar.flordeliz.dao.ItemPedidoDAO;
-import com.example.gilcemar.flordeliz.dao.PedidoDAO;
 
 import java.io.IOException;
 
 /**
- * Created by gilcemar on 15/11/17.
+ * Created by gilcemar on 16/11/17.
  */
 
-public class ControladorPedido extends Controlador{
-
+public class ControladorItemPedido extends Controlador {
     @Override
     public String[] inserir(String[] parametros, Context context) {
         String[] retorno = new String[1];
@@ -21,7 +19,7 @@ public class ControladorPedido extends Controlador{
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            DAO dao = new PedidoDAO();
+            DAO dao = new ItemPedidoDAO();
 
             try {
                 retorno = dao.inserir(parametros, context);
@@ -32,6 +30,8 @@ public class ControladorPedido extends Controlador{
                 retorno[0] = e.getMessage();
                 return retorno;
             }
+
+            //return true;
         }else{
             retorno[0] = "Não deu certo a conexão";
             return retorno;
@@ -45,7 +45,7 @@ public class ControladorPedido extends Controlador{
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            DAO dao = new PedidoDAO();
+            DAO dao = new ItemPedidoDAO();
 
             try {
                 retorno = dao.alterar(parametros, context);
@@ -56,6 +56,8 @@ public class ControladorPedido extends Controlador{
                 retorno[0] = e.getMessage();
                 return retorno;
             }
+
+            //return true;
         }else{
             retorno[0] = "Não deu certo a conexão";
             return retorno;
@@ -69,7 +71,58 @@ public class ControladorPedido extends Controlador{
             Object[] param = new Object[2];
             param[0] = parametros;
 
-            DAO dao = new PedidoDAO();
+            DAO dao = new ItemPedidoDAO();
+
+            try {
+                retorno = dao.pesquisar(parametros, context);
+                return retorno;
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                retorno[0] = e.getMessage();
+                return retorno;
+            }
+
+            //return true;
+        }else{
+            retorno[0] = "Não deu certo a conexão";
+            return retorno;
+        }
+    }
+
+    @Override
+    public String[] excluir(String[] parametros, Context context) {
+        String[] retorno = new String[1];
+        if (super.internetEstaConectada(context)){
+            Object[] param = new Object[2];
+            param[0] = parametros;
+
+            DAO dao = new ItemPedidoDAO();
+
+            try {
+                retorno = dao.excluir(parametros, context);
+                return retorno;
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                retorno[0] = e.getMessage();
+                return retorno;
+            }
+
+            //return true;
+        }else{
+            retorno[0] = "Não deu certo a conexão";
+            return retorno;
+        }
+    }
+
+    public String[] listarItemPedido(String[] parametros, Context context){
+        String[] retorno = new String[1];
+        if (super.internetEstaConectada(context)){
+            Object[] param = new Object[2];
+            param[0] = parametros;
+
+            DAO dao = new ItemPedidoDAO();
 
             try {
                 retorno = dao.pesquisar(parametros, context);
@@ -85,30 +138,4 @@ public class ControladorPedido extends Controlador{
             return retorno;
         }
     }
-
-    @Override
-    public String[] excluir(String[] parametros, Context context) {
-        String[] retorno = new String[1];
-        if (super.internetEstaConectada(context)){
-            Object[] param = new Object[2];
-            param[0] = parametros;
-
-            DAO dao = new PedidoDAO();
-
-            try {
-                retorno = dao.excluir(parametros, context);
-                return retorno;
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                retorno[0] = e.getMessage();
-                return retorno;
-            }
-        }else{
-            retorno[0] = "Não deu certo a conexão";
-            return retorno;
-        }
-    }
-
-
 }

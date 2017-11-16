@@ -25,7 +25,9 @@
         <activity android:name=".view.CadastroLote" />
         <activity android:name="view.ListaItemLote" />
         <activity android:name=".view.CadastroListaItemLote" />
-        <activity android:name=".view.CadastroItemLote"></activity>
+        <activity android:name=".view.CadastroItemLote" />
+        <activity android:name=".view.CadastroListaPedido" />
+        <activity android:name=".view.CadastroItemPedido"></activity>
     </application>
 
 </manifest>
