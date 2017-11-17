@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/janela"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,6 +12,7 @@
 
         <TextView
             android:id="@+id/cabecalhoListaItemPedido"
+            style="@style/TextViewCab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -26,6 +28,7 @@
 
             <TextView
                 android:id="@+id/textView3"
+                style="@style/TextView"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -35,6 +38,7 @@
 
             <TextView
                 android:id="@+id/textViewNumPedido"
+                style="@style/TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -51,6 +55,7 @@
 
             <TextView
                 android:id="@+id/textView4"
+                style="@style/TextView"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -60,6 +65,7 @@
 
             <TextView
                 android:id="@+id/textViewCodCalcItemPedido"
+                style="@style/TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -76,6 +82,7 @@
 
             <TextView
                 android:id="@+id/textView5"
+                style="@style/TextView"
                 android:layout_width="400dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -85,6 +92,7 @@
 
             <TextView
                 android:id="@+id/textViewQuantComprada"
+                style="@style/TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

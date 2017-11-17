@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/janela"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gilcemar.flordeliz.view.Principal">
@@ -20,24 +21,28 @@
 
         <Button
             android:id="@+id/cadCalc"
+            style="@style/botao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastro Calçado" />
 
         <Button
             android:id="@+id/cadCliente"
+            style="@style/botao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastro Cliente" />
 
         <Button
             android:id="@+id/cadLote"
+            style="@style/botao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastro de Lote" />
 
         <Button
             android:id="@+id/cadPedido"
+            style="@style/botao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastro de Pedido" />

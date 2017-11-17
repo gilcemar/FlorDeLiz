@@ -9,4 +9,40 @@
 
     </style>
 
+    <style name="botao">
+        <item name="android:background">#54c55c</item>
+        <item name="android:textColor">#5a5a5a</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:radius">10dp</item>
+
+    </style>
+
+    <style name="janela">
+        <item name="android:background">#9fe0a4</item>
+        <item name="android:layout_margin">2dp</item>
+
+    </style>
+
+    <style name="EditText">
+        <item name="android:background">#7ad380</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:radius">10dp</item>
+        <item name="android:textColor">#737373</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="TextView">
+        <item name="android:background">#7ad380</item>
+        <item name="android:textColor">#737373</item>
+    </style>
+
+    <style name="TextViewCab">
+        <item name="android:background">#7ad380</item>
+        <item name="android:textColor">#5a5a5a</item>
+        <item name="android:textSize">50dp</item>
+
+    </style>
+
 </resources>

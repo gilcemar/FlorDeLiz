@@ -2,140 +2,158 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/janela"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gilcemar.flordeliz.view.CadastroLote">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/Lote"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edtNumeroLote"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Número do lote"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edtCodCalcado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Código do calçado"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edtDataProdLote"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="data de produção do lote"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edtQuatProd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Quantidade produzida"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edtQuantDispon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Quantidade disponível"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edtTamCalcado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Tamanho do calcado"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edtPrecoRevenda"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Preço de revenda"
-                android:inputType="textPersonName" />
-
             <LinearLayout
+                android:id="@+id/Lote"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/botaoPesqLote"
+                <EditText
+                    android:id="@+id/edtNumeroLote"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Pesquisar" />
+                    android:ems="10"
+                    android:hint="Número do lote"
+                    android:inputType="textPersonName" />
 
-                <Button
-                    android:id="@+id/botaoPesqItemLote"
+                <EditText
+                    android:id="@+id/edtCodCalcado"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Listar itens do lote" />
+                    android:ems="10"
+                    android:hint="Código do calçado"
+                    android:inputType="textPersonName" />
 
+                <EditText
+                    android:id="@+id/edtDataProdLote"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="data de produção do lote"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/edtQuatProd"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Quantidade produzida"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/edtQuantDispon"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Quantidade disponível"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/edtTamCalcado"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Tamanho do calcado"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/edtPrecoRevenda"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Preço de revenda"
+                    android:inputType="textPersonName" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/botaoPesqLote"
+                        style="@style/botao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pesquisar" />
+
+                    <Button
+                        android:id="@+id/botaoPesqItemLote"
+                        style="@style/botao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Listar itens do lote" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/botaoInsLote"
+                        style="@style/botao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cadastrar" />
+
+                    <Button
+                        android:id="@+id/botaoAltLote"
+                        style="@style/botao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Alterar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/botaoExcLote"
+                        style="@style/botao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Excluir" />
+
+                    <Button
+                        android:id="@+id/botaoVoltarLote"
+                        style="@style/botao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Voltar" />
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/botaoInsLote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Cadastrar" />
-
-                <Button
-                    android:id="@+id/botaoAltLote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Alterar" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/botaoExcLote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Excluir" />
-
-                <Button
-                    android:id="@+id/botaoVoltarLote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Voltar" />
-            </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
-
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>

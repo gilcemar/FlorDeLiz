@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/janela"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gilcemar.flordeliz.view.CadastroItemPedido">
@@ -18,6 +19,7 @@
 
             <EditText
                 android:id="@+id/editTextNumPedido"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -26,6 +28,7 @@
 
             <EditText
                 android:id="@+id/editTextCodCalcadoProd"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -34,6 +37,7 @@
 
             <EditText
                 android:id="@+id/editTextQuantItem"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -47,6 +51,7 @@
 
                 <Button
                     android:id="@+id/botaoInsItemPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -54,6 +59,7 @@
 
                 <Button
                     android:id="@+id/botaoAltItemPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -67,6 +73,7 @@
 
                 <Button
                     android:id="@+id/botaoExcItemPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -74,6 +81,7 @@
 
                 <Button
                     android:id="@+id/botaoVoltar"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

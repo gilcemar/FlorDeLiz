@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/janela"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gilcemar.flordeliz.view.CadastroCalcado">
@@ -24,6 +25,7 @@
 
             <EditText
                 android:id="@+id/edtNomeCal"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -32,6 +34,7 @@
 
             <EditText
                 android:id="@+id/edtMenorTamCal"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -40,6 +43,7 @@
 
             <EditText
                 android:id="@+id/edtMaiorTamCal"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -48,6 +52,7 @@
 
             <EditText
                 android:id="@+id/edtCorCal"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -56,6 +61,7 @@
 
             <EditText
                 android:id="@+id/edtColecaoCal"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -64,6 +70,7 @@
 
             <EditText
                 android:id="@+id/edtPrecoCustCal"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -77,6 +84,7 @@
 
                 <Button
                     android:id="@+id/botaoPesqCalc"
+                    style="@style/botao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -84,6 +92,7 @@
 
                 <Button
                     android:id="@+id/botaoInsCalc"
+                    style="@style/botao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -99,6 +108,7 @@
 
                 <Button
                     android:id="@+id/botaoAlterarCal"
+                    style="@style/botao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -106,6 +116,7 @@
 
                 <Button
                     android:id="@+id/botaoExcluirCal"
+                    style="@style/botao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -122,6 +133,7 @@
 
                 <Button
                     android:id="@+id/botaoVoltar"
+                    style="@style/botao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

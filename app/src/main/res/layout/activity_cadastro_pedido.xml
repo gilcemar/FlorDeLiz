@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/janela"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gilcemar.flordeliz.view.CadastroPedido">
@@ -13,10 +14,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/editTextNumPedido"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -26,6 +28,7 @@
 
             <EditText
                 android:id="@+id/editTextCnpjPedido"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -35,6 +38,7 @@
 
             <EditText
                 android:id="@+id/editTextDescPedido"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -49,6 +53,7 @@
 
                 <Button
                     android:id="@+id/botaoPesquisarPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -57,6 +62,7 @@
 
                 <Button
                     android:id="@+id/botaoListarItensPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -71,6 +77,7 @@
 
                 <Button
                     android:id="@+id/botaoInsPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -79,6 +86,7 @@
 
                 <Button
                     android:id="@+id/botaoAltPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -93,6 +101,7 @@
 
                 <Button
                     android:id="@+id/botaoExcPedido"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -101,6 +110,7 @@
 
                 <Button
                     android:id="@+id/botaoVoltar"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"

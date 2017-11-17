@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/janela"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.gilcemar.flordeliz.view.CadastroCliente">
@@ -22,6 +23,7 @@
 
             <TextView
                 android:id="@+id/lbDadosLoja"
+                style="@style/TextViewCab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
@@ -33,6 +35,7 @@
 
             <EditText
                 android:id="@+id/edtCnpjCliente"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -41,6 +44,7 @@
 
             <EditText
                 android:id="@+id/edtNomeLoja"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -49,6 +53,7 @@
 
             <EditText
                 android:id="@+id/edtTelefone"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -57,6 +62,7 @@
 
             <EditText
                 android:id="@+id/edtCpfDono"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -65,6 +71,7 @@
 
             <EditText
                 android:id="@+id/edtNomeDono"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -73,6 +80,7 @@
 
             <TextView
                 android:id="@+id/lbEndLoja"
+                style="@style/TextViewCab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="false"
@@ -88,10 +96,12 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Rua"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                style="@style/EditText" />
 
             <EditText
                 android:id="@+id/edtNumero"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -100,6 +110,7 @@
 
             <EditText
                 android:id="@+id/edtBairro"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -108,6 +119,7 @@
 
             <EditText
                 android:id="@+id/edtCidade"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -116,6 +128,7 @@
 
             <EditText
                 android:id="@+id/edtUf"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -124,6 +137,7 @@
 
             <EditText
                 android:id="@+id/edtPais"
+                style="@style/EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -138,6 +152,7 @@
 
                 <Button
                     android:id="@+id/botaoPesqCliente"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -145,6 +160,7 @@
 
                 <Button
                     android:id="@+id/botaoInsCliente"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -158,6 +174,7 @@
 
                 <Button
                     android:id="@+id/botaoAltCliente"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -165,6 +182,7 @@
 
                 <Button
                     android:id="@+id/botaoExcCliente"
+                    style="@style/botao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -173,6 +191,7 @@
 
             <Button
                 android:id="@+id/botaoVoltarCliente"
+                style="@style/botao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Voltar" />
